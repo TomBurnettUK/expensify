@@ -1,0 +1,22 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb",
+        "prettier"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "import/no-named-as-default": ["off"],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "react/jsx-filename-extension": ["off"],
+        "jsx-a11y/no-autofocus": ["off"],
+        "react/prop-types": ["off"],
+        "prettier/prettier": ["warn", { "bracketSpacing": true, "singleQuote": true }]
+    },
+    "env": {
+        "browser": true,
+        "jest": true
+    }
+}

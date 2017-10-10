@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "index.js": "javascriptreact",
+    "**/{components,routers}/*.js": "javascriptreact"
+  }
+}

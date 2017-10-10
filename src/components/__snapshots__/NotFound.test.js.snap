@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<div>
+  <p>
+    Not found! 
+    <Link
+      replace={false}
+      to="/"
+    >
+      Homepage
+    </Link>
+  </p>
+</div>
+`;
