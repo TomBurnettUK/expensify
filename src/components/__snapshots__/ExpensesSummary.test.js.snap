@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly with empty values 1`] = `
+<div>
+  <p>
+    Viewing 
+    0
+     expenses, totalling
+     
+    £0.00
+  </p>
+</div>
+`;
+
+exports[`should render correctly with populated values 1`] = `
+<div>
+  <p>
+    Viewing 
+    3
+     expenses, totalling
+     
+    £10.00
+  </p>
+</div>
+`;
