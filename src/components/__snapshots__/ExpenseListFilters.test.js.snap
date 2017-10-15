@@ -59,6 +59,7 @@ exports[`should render ExpenseListFilters with alternate filters correctly 1`] =
     orientation="horizontal"
     phrases={
       Object {
+        "calendarLabel": "Calendar",
         "chooseAvailableEndDate": [Function],
         "chooseAvailableStartDate": [Function],
         "clearDates": "Clear Dates",
@@ -166,6 +167,7 @@ exports[`should render ExpenseListFilters with default filters correctly 1`] = `
     orientation="horizontal"
     phrases={
       Object {
+        "calendarLabel": "Calendar",
         "chooseAvailableEndDate": [Function],
         "chooseAvailableStartDate": [Function],
         "clearDates": "Clear Dates",

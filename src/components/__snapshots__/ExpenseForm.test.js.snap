@@ -52,6 +52,7 @@ exports[`should render ExpenseForm correctly 1`] = `
       orientation="horizontal"
       phrases={
         Object {
+          "calendarLabel": "Calendar",
           "chooseAvailableDate": [Function],
           "clearDate": "Clear Date",
           "closeDatePicker": "Close",
@@ -157,6 +158,7 @@ exports[`should render ExpenseForm with expense data 1`] = `
       orientation="horizontal"
       phrases={
         Object {
+          "calendarLabel": "Calendar",
           "chooseAvailableDate": [Function],
           "clearDate": "Clear Date",
           "closeDatePicker": "Close",
@@ -265,6 +267,7 @@ exports[`should render error for invalid form submission 1`] = `
       orientation="horizontal"
       phrases={
         Object {
+          "calendarLabel": "Calendar",
           "chooseAvailableDate": [Function],
           "clearDate": "Clear Date",
           "closeDatePicker": "Close",
