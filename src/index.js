@@ -6,8 +6,10 @@ import 'react-dates/lib/css/_datepicker.css';
 
 import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';
+import { login, logout } from './actions/auth';
 
-import AppRouter from './routers/AppRouter';
+import { firebase } from './firebase/database';
+import AppRouter, { history } from './routers/AppRouter';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -19,11 +21,30 @@ const jsx = (
   </Provider>
 );
 
+let hasRendered = false;
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById('root'));
+    hasRendered = true;
+  }
+};
+
 ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
 
-// Initial hydration
-store.dispatch(startSetExpenses()).then(() => {
-  ReactDOM.render(jsx, document.getElementById('root'));
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    store.dispatch(login(user.uid));
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp();
+      if (history.location.pathname === '/') {
+        history.push('/dashboard');
+      }
+    });
+  } else {
+    store.dispatch(logout());
+    renderApp();
+    history.push('/');
+  }
 });
 
 registerServiceWorker();
