@@ -50,3 +50,10 @@ it('should not edit state with invalid id', () => {
   const state = expensesReducer(expenses, action);
   expect(state).toEqual(expenses);
 });
+
+it('should set expenses', () => {
+  const initialState = [expenses[0], expenses[2]];
+  const action = { type: 'SET_EXPENSES', expenses };
+  const state = expensesReducer(initialState, action);
+  expect(state).toEqual(expenses);
+});

@@ -4,12 +4,22 @@ import {
   startAddExpense,
   addExpense,
   editExpense,
-  removeExpense
+  removeExpense,
+  startSetExpenses,
+  setExpenses
 } from './expenses';
 import expenses from '../fixtures/expenses';
 import database from '../firebase/database';
 
 const createMockStore = configureStore([thunk]);
+
+beforeEach(async () => {
+  const expensesData = {};
+  expenses.forEach(({ id, description, note, amount, createdAt }) => {
+    expensesData[id] = { description, note, amount, createdAt };
+  });
+  await database.ref('expenses').set(expensesData);
+});
 
 it('should create REMOVE_EXPENSE action object', () => {
   const action = removeExpense({ id: '123abc' });
@@ -87,4 +97,19 @@ it('should add empty expense with default values to db and store', async () => {
     .ref(`expenses/${actions[0].expense.id}`)
     .once('value');
   expect(snapshot.val()).toEqual(defaultExpense);
+});
+
+it('should create SET_EXPENSES object with data', () => {
+  const action = setExpenses(expenses);
+  expect(action).toEqual({
+    type: 'SET_EXPENSES',
+    expenses
+  });
+});
+
+it('should fetch expenses from firebase', async () => {
+  const store = createMockStore({});
+  await store.dispatch(startSetExpenses());
+  const actions = store.getActions();
+  expect(actions[0]).toEqual({ type: 'SET_EXPENSES', expenses });
 });

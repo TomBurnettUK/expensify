@@ -5,6 +5,7 @@ import 'normalize.css';
 import 'react-dates/lib/css/_datepicker.css';
 
 import configureStore from './store/configureStore';
+import { startSetExpenses } from './actions/expenses';
 
 import AppRouter from './routers/AppRouter';
 import registerServiceWorker from './registerServiceWorker';
@@ -18,6 +19,11 @@ const jsx = (
   </Provider>
 );
 
-ReactDOM.render(jsx, document.getElementById('root'));
+ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+
+// Initial hydration
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(jsx, document.getElementById('root'));
+});
 
 registerServiceWorker();
