@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import {
   startAddExpense,
   addExpense,
+  startEditExpense,
   editExpense,
   startRemoveExpense,
   removeExpense,
@@ -58,7 +59,7 @@ it('should add expense to db and store', async () => {
   };
   await store.dispatch(startAddExpense(expenseData));
 
-  // Check store was updated
+  // Check store was dispatched action
   const actions = store.getActions();
   expect(actions[0]).toEqual({
     type: 'ADD_EXPENSE',
@@ -119,14 +120,33 @@ it('should remove expense from db and store', async () => {
   const store = createMockStore({});
   await store.dispatch(startRemoveExpense({ id: expenses[0].id }));
 
+  // Check store was dispatched action
   const actions = store.getActions();
   expect(actions[0]).toEqual({
     type: 'REMOVE_EXPENSE',
     id: expenses[0].id
   });
 
+  // Check db was updated
   const snapshot = await database
     .ref(`expenses/${expenses[0].id}`)
     .once('value');
   expect(snapshot.val()).toBeFalsy();
+});
+
+it('should edit expense on firebase', async () => {
+  const store = createMockStore({});
+  const payload = { id: 'a', updates: { note: 'New note value' } };
+  await store.dispatch(startEditExpense(payload.id, payload.updates));
+
+  // Check store was dispatched action
+  const actions = store.getActions();
+  expect(actions[0]).toEqual({
+    type: 'EDIT_EXPENSE',
+    ...payload
+  });
+
+  // Check db was updated
+  const snapshot = await database.ref(`expenses/${payload.id}`).once('value');
+  expect(snapshot.val().note).toEqual(payload.updates.note);
 });
