@@ -5,7 +5,7 @@ exports[`should render Header correctly 1`] = `
   <h1>
     <Link
       replace={false}
-      to="/"
+      to="/dashboard"
     >
       Expensify
     </Link>
