@@ -1,19 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import numeral from 'numeral';
 import 'numeral/locales/en-gb';
 
 import selectExpenses from '../selectors/expenses';
 import getExpensesTotal from '../selectors/expenses-total';
 
+import './ExpenseSummary.css';
+
 numeral.locale('en-gb');
 
 export const ExpensesSummary = props => (
-  <div>
-    <p>
-      Viewing {props.expenseCount} expenses, totalling{' '}
-      {numeral(props.expensesTotal / 100).format('$0,0.00')}
-    </p>
+  <div className="page-header">
+    <div className="content-container">
+      <h2 className="page-header-title">
+        Viewing <span>{props.expenseCount}</span> expenses, totalling{' '}
+        <span>{numeral(props.expensesTotal / 100).format('$0,0.00')}</span>
+      </h2>
+      <div className="summary-buttons">
+        <Link className="add-button" to="/create">
+          Add Expense
+        </Link>
+      </div>
+    </div>
   </div>
 );
 

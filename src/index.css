@@ -8,3 +8,20 @@ body {
 button {
   cursor: pointer;
 }
+
+.content-container {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 60rem;
+}
+
+.page-header {
+  background: #F7F7F7;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.page-header-title {
+  font-weight: 300;
+  margin: 0;
+}

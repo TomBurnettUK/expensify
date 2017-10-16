@@ -1,0 +1,28 @@
+header {
+  background: #364051;
+}
+
+header h1 {
+  color: #FFF;
+  margin: 0
+}
+
+header a {
+  text-decoration: none;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content button {
+  background: none;
+  color: #FFF;
+  border: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1;
+}

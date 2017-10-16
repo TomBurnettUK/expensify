@@ -1,25 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly with empty values 1`] = `
-<div>
-  <p>
-    Viewing 
-    0
-     expenses, totalling
-     
-    £0.00
-  </p>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h2
+      className="page-header-title"
+    >
+      Viewing 
+      <span>
+        0
+      </span>
+       expenses, totalling
+       
+      <span>
+        £0.00
+      </span>
+    </h2>
+    <div
+      className="summary-buttons"
+    >
+      <Link
+        className="add-button"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should render correctly with populated values 1`] = `
-<div>
-  <p>
-    Viewing 
-    3
-     expenses, totalling
-     
-    £10.00
-  </p>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h2
+      className="page-header-title"
+    >
+      Viewing 
+      <span>
+        3
+      </span>
+       expenses, totalling
+       
+      <span>
+        £10.00
+      </span>
+    </h2>
+    <div
+      className="summary-buttons"
+    >
+      <Link
+        className="add-button"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;

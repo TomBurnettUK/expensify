@@ -1,0 +1,19 @@
+.page-header-title span {
+  font-weight: 700;
+}
+
+.summary-buttons {
+  margin-top: 1.5rem;
+}
+
+.add-button {
+  background-color: #364051;
+  color: #FFF;
+  border: none;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-decoration: none;
+  line-height: 1;
+}
