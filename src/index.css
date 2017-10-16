@@ -1,5 +1,10 @@
 /* Base styles for the app go here */
 
 body {
+  color: #333;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+button {
+  cursor: pointer;
 }

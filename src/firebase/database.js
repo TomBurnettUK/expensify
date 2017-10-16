@@ -10,6 +10,7 @@ const config = {
 };
 
 firebase.initializeApp(config);
+firebase.auth().useDeviceLanguage();
 
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
