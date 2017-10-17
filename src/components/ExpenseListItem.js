@@ -4,16 +4,22 @@ import moment from 'moment';
 import numeral from 'numeral';
 import 'numeral/locales/en-gb';
 
+import './ExpenseListItem.css';
+
 numeral.locale('en-gb');
 
 const ExpenseListItem = props => (
-  <div>
-    <h3>
-      <Link to={`/edit/${props.id}`}>Description: {props.description}</Link>
+  <Link className="list-item" to={`/edit/${props.id}`}>
+    <div>
+      <h3 className="list-item-title">{props.description}</h3>
+      <p className="list-item-date">
+        {moment(props.createdAt).format('MMMM Do, YYYY')}
+      </p>
+    </div>
+    <h3 className="list-item-amount">
+      {numeral(props.amount / 100).format('$0,0.00')}
     </h3>
-    <p>Amount: {numeral(props.amount / 100).format('$0,0.00')}</p>
-    <p>Created on {moment(props.createdAt).format('MMMM Do, YYYY')}</p>
-  </div>
+  </Link>
 );
 
 export default ExpenseListItem;

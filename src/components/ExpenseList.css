@@ -1,0 +1,29 @@
+@media (min-width: 40rem) {
+  .show-for-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 40rem) {
+  .show-for-desktop {
+    display: none;
+  }
+}
+
+.no-expenses-message {
+  border: 1px solid #D2D2D2;
+  border-top: none;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.list-header {
+  background: #F7F7F7;
+  border: 1px solid #D2D2D2;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}

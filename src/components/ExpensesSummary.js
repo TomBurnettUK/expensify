@@ -7,12 +7,12 @@ import 'numeral/locales/en-gb';
 import selectExpenses from '../selectors/expenses';
 import getExpensesTotal from '../selectors/expenses-total';
 
-import './ExpenseSummary.css';
+import './ExpensesSummary.css';
 
 numeral.locale('en-gb');
 
 export const ExpensesSummary = props => (
-  <div className="page-header">
+  <div className="page-header summary-header">
     <div className="content-container">
       <h2 className="page-header-title">
         Viewing <span>{props.expenseCount}</span> expenses, totalling{' '}

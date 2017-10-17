@@ -1,4 +1,7 @@
 /* Base styles for the app go here */
+* {
+  box-sizing: border-box;
+}
 
 body {
   color: #333;
@@ -15,10 +18,15 @@ button {
   max-width: 60rem;
 }
 
+@media(min-width: 30rem) {
+  .content-container {
+    padding: 1rem 2rem;
+  }
+}
+
 .page-header {
   background: #F7F7F7;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .page-header-title {

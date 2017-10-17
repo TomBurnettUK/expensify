@@ -1,13 +1,5 @@
-.page-header-title span {
-  font-weight: 700;
-}
-
-.summary-buttons {
-  margin-top: 1.5rem;
-}
-
-.add-button {
-  background-color: #364051;
+.remove-button {
+  background-color: #88140C;
   color: #FFF;
   border: none;
   display: inline-block;
@@ -16,4 +8,5 @@
   font-weight: 300;
   text-decoration: none;
   line-height: 1;
+  width: 20rem;
 }

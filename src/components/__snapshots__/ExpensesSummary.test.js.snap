@@ -2,7 +2,7 @@
 
 exports[`should render correctly with empty values 1`] = `
 <div
-  className="page-header"
+  className="page-header summary-header"
 >
   <div
     className="content-container"
@@ -37,7 +37,7 @@ exports[`should render correctly with empty values 1`] = `
 
 exports[`should render correctly with populated values 1`] = `
 <div
-  className="page-header"
+  className="page-header summary-header"
 >
   <div
     className="content-container"

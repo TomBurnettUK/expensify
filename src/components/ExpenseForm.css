@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form > * {
+  margin-bottom: 1rem;
+}
+
+.form-error {
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+.text-input {
+  border: 1px solid #CACCCD;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0 16px;
+}
+
+.textarea-input {
+  border: 1px solid #CACCCD;
+  height: 10rem;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 16px;
+  width: 100%;
+}
+
+.submit-button {
+  background-color: #364051;
+  color: #FFF;
+  border: none;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-decoration: none;
+  line-height: 1;
+  width: 20rem;
+}

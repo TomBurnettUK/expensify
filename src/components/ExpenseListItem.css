@@ -1,0 +1,44 @@
+.list-item {
+  border: 1px solid #D2D2D2;
+  border-top: none;
+  color: #333;
+  padding: 0 1rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: background .3s ease-in-out;
+}
+
+.list-item:hover {
+  background-color: #F7F7F7;
+}
+
+.list-item-title {
+  word-break: break-all;
+  font-weight: 400;
+}
+
+.list-item-amount {
+  font-weight: 500;
+}
+
+.list-item-date {
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (min-width: 40rem) {
+  .list-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .list-item-amount {
+    padding-left: 5rem;
+  }
+
+  .list-item-date {
+    margin-bottom: 1rem;
+  }
+}
